@@ -1,3 +1,40 @@
-body {
-    background-color: blue;
+:root {
+  --body-bg: rgba(64, 224, 208, 0.338);
+}
+
+.bodyStyle {
+  color: rgb(174, 21, 174);
+  box-shadow: 5px 5x 5x blueviolet;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 10px dashed rgb(240, 80, 240);
+  border-radius: 35px;
+  height: 100vh;
+  padding: 20px;
+}
+
+.inputForm {
+  background-color: rgb(228, 109, 228);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.inputEls {
+  box-shadow: 5px 5px 5px yellow;
+}
+
+.inputEls:hover {
+  background-color: cyan;
+  color: blue;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  font-size: x-large;
+  background-color: blue;
+  color: cyan;
 }
