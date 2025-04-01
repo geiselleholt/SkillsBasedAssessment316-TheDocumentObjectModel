@@ -9,8 +9,26 @@
   </head>
   <body>
     <main></main>
-    <div id="story">
-      <h3>Funny story:</h3>
+
+    <template id="storyTemplate" class="storyStyle">
+      <div id="templateDiv">
+        <h3 id="templateTitle"></h3>
+        <p id="templateStory"></p>
+      </div>
+    </template>
+    <div id="storyDiv"></div>
+
+    <div id="radioDiv">
+      <ul style="list-style-type: none">
+        <li>
+          <input type="radio" id="replay" name="choice" />
+          <label for="replay">Play this story again?</label>
+        </li>
+        <li>
+          <input type="radio" id="next" name="choice" />
+          <label for="next">Try another funny story?</label>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
