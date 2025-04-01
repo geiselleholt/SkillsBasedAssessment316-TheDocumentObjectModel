@@ -1,15 +1,16 @@
 :root {
-  --body-bg: rgba(64, 224, 208, 0.338);
+  --main-bg: rgba(64, 224, 208, 0.338);
 }
 
-.bodyStyle {
+.mainStyle {
   color: rgb(174, 21, 174);
   box-shadow: 5px 5x 5x blueviolet;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 10px dashed rgb(240, 80, 240);
   border-radius: 35px;
-  height: 100vh;
+  /* height: 100vh; */
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .inputForm {
@@ -25,7 +26,7 @@
 }
 
 .inputEls:hover {
-  background-color: cyan;
+  background-color: rgb(117, 232, 232);
   color: blue;
   font-size: x-large;
   font-weight: bold;
@@ -34,7 +35,22 @@
 .button {
   width: 100px;
   height: 40px;
-  font-size: x-large;
+  font-size: large;
   background-color: blue;
   color: cyan;
+}
+
+.storyDiv {
+  background-color: pink;
+  color: blue;
+  height: 400px;
+  width: 80%;
+  border: 10px dashed blue;
+  border-radius: 20px;
+  margin: auto;
+  font-size: x-large;
+}
+
+body {
+    background-color: rgb(237, 237, 169);
 }
