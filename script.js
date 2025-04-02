@@ -12,7 +12,7 @@ var inputs = [
   {
     id: `adjective`,
     type: `text`,
-    placeholder: `Adjective`,
+    placeholder: `Describing word`,
   },
   {
     id: `number`,
@@ -31,7 +31,7 @@ var inputs = [
   {
     id: `occupation`,
     type: `text`,
-    placeholder: `Occupation`,
+    placeholder: `Job`,
   },
   {
     id: `language`,
@@ -43,10 +43,10 @@ var inputs = [
 let main = document.querySelector(`main`);
 // Cache at least one element using querySelector or querySelectorAll ✅
 main.style.backgroundColor = `var(--main-bg)`;
-main.innerHTML = `<h1>🤖 Mad Libs from a Tech Newb 👩‍💻</h1>`;
+main.innerHTML = `<h2>🤖 Mad Libs from a Tech Newb 👩‍💻</h2>`;
 main.classList.add(`mainStyle`);
 
-let instructions = document.createElement(`h2`);
+let instructions = document.createElement(`h3`);
 // Create at least one element using createElement ✅
 instructions.textContent = `Don't think!🚫🤔 Just enter in the first word or number that comes to mind and see a funny story 🤪`;
 main.appendChild(instructions);
@@ -104,7 +104,7 @@ function handleInputForm(e) {
     alert(`You missed an entry or 2... 😜`);
     // Use at least two Browser Object Model (BOM) properties or methods - #1 ✅
   } else {
-    let storySection = document.getElementById("storySection");
+    let storySection = document.getElementById(`storySection`);
 
     if (!storySection.firstChild) {
       // Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.) ✅
@@ -114,19 +114,19 @@ function handleInputForm(e) {
 
       createStory(firstTitle, firstStory);
     } else {
-      let newStory = `One fine day on ${date}, a ${adjective} ${pet} wandered into the forest. It decided to ${action} near a group of ${occupation}s who were having a picnic. After ${number} minutes, the ${pet} joined them and started eating ${food}. To everyone's surprise, the ${pet} began speaking in ${language}, telling jokes and making everyone laugh. It was the most ${adjective} day in the forest, and the ${pet} became the forest's favorite comedian!`;
+      let newStory = `One cloudy day on ${date} ⛅, a ${adjective} ${pet} wandered into the forest🌲. It decided to ${action} near a group of ${occupation}s who were having a picnic🧺. After ${number} minutes, the ${pet} joined them and started eating their ${food}🥣. To everyone's surprise, the ${pet} began speaking in ${language}, telling jokes and making everyone laugh🤣😂. It was the most ${adjective} day in the forest🌄, and the ${pet} became the forest's favorite comedian!🤡`;
 
       let newTitle = `Forest funday...`;
 
       createStory(newTitle, newStory);
-      actionButtons.style.visibility = "hidden";
 
-      setTimeout(alert("That was fun Play Again!"), 100);
+      actionButtons.style.visibility = `hidden`;
+
+      setTimeout(() => {
+        alert(`Thanks for playing! 🎉`);
+        window.location.reload();
+      }, 10000);
     }
-
-    inputEls.forEach((inputEl) => {
-      inputEl.value = "";
-    });
   }
 }
 
@@ -140,26 +140,26 @@ function createStory(title, story) {
   let clone = template.content.cloneNode(true);
 
   clone.getElementById(`templateTitle`).textContent = title;
-  clone.getElementById(`templateStory`).innerHTML = `<h4>${story}</h4>`;
+  clone.getElementById(`templateStory`).innerHTML = `<h5>${story}</h5>`;
   // Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent ✅
 
   fragment.appendChild(clone);
 
-  let storySection = document.getElementById("storySection");
+  let storySection = document.getElementById(`storySection`);
   let storyDiv = document.createElement(`div`);
   storyDiv.classList.add(`storyStyle`);
   storySection.appendChild(storyDiv);
   storyDiv.appendChild(fragment);
 
-  let actionButtons = document.getElementById("actionButtons");
-  actionButtons.style.visibility = "visible";
+  let actionButtons = document.getElementById(`actionButtons`);
+  actionButtons.style.visibility = `visible`;
   // Modify at least one attribute of an element in response to user interaction ✅
   // Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties ✅
 }
 
-let replay = document.getElementById("replayButton");
+let replay = document.getElementById(`replayButton`);
 replay.classList.add(`button`);
-replay.addEventListener("click", handleReplay);
+replay.addEventListener(`click`, handleReplay);
 // Register at least two different event listeners and create the associated event handler functions - #2 ✅
 
 function handleReplay(e) {
@@ -168,19 +168,19 @@ function handleReplay(e) {
   // Use at least two Browser Object Model (BOM) properties or methods - #2 ✅
 }
 
-let newStory = document.getElementById("newStoryButton");
+let newStory = document.getElementById(`newStoryButton`);
 newStory.classList.add(`button`);
-newStory.addEventListener("click", handleNewStory);
+newStory.addEventListener(`click`, handleNewStory);
 
 function handleNewStory(e) {
   e.preventDefault();
 
-  let inputEls = document.querySelectorAll("input");
+  let inputEls = document.querySelectorAll(`input`);
   inputEls.forEach((inputEl) => {
-    inputEl.value = "";
+    inputEl.value = ``;
   });
 
-  alert("Enter new words and numbers for a funny forest story 🤩");
+  alert(`Enter new words and numbers for a funny forest story 🤩`);
 }
 
 // ADDITIONAL REQUIREMENTS ------------

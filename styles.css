@@ -8,7 +8,7 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 10px dashed rgb(240, 80, 240);
   border-radius: 35px;
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 20px;
 }
 
@@ -18,19 +18,21 @@
   margin: auto;
   padding: 10px;
   font-size: medium;
+  border-radius: 20px;
 }
 
 .inputEls {
   box-shadow: 5px 5px 5px rgb(237, 237, 169);
   margin: 20px 40px 20px 40px;
   font-weight: bold;
+  border-radius: 20px;
+  padding: 5px;
 }
 
 .inputEls:hover {
   background-color: cyan;
   color: blue;
   font-size: large;
-  font-weight: bold;
 }
 
 .button {
@@ -40,23 +42,24 @@
   background-color: blue;
   color: cyan;
   box-shadow: 5px 5px 5px rgb(237, 237, 169);
+  border-radius: 20px;
 }
 
 .button:hover {
-  transform: rotate(359deg);
-  transition: transform 2s;
+  transform: rotate(180deg);
+  transition: transform 4s;
 }
 
 .storyStyle {
   background-color: cyan;
   color: blue;
-  height: 300px;
+  height: 220px;
   width: 80%;
-  border: 10px dashed blue;
+  border: 5px dashed violet;
   border-radius: 20px;
   margin: auto;
   font-size: x-large;
-  padding: 10px;
+  padding: 0px 20px 0px 30px;
 }
 
 body {
@@ -67,37 +70,23 @@ body {
   font-size: large;
   background-color: violet;
   border-radius: 20px;
-  height: 100px;
-  width: 50%;
+  height: 50px;
+  width: 60%;
   margin: auto;
   box-shadow: none;
   visibility: hidden;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border: 5px dashed blue;
 }
 
 #replayButton,
 #newStoryButton {
-  width: 400px;
-  height: 40px;
-  font-size: x-large;
+  width: 200px;
+  height: 30px;
+  font-size: medium;
   background-color: blue;
   color: cyan;
   box-shadow: 5px 5px 5px rgb(237, 237, 169);
-}
-
-#radioDiv input {
-  transform: scale(1.5);
-}
-
-#radioDiv label {
-  font-weight: bold;
-  color: blue;
-}
-
-#radioDiv label:hover {
-  background-color: cyan;
-  font-size: x-large;
-  font-weight: bold;
 }
