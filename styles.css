@@ -50,14 +50,15 @@
   transition: transform 4s;
 }
 
-.storyStyle {
+.storyDivStyle {
   background-color: cyan;
   color: blue;
-  height: 220px;
-  width: 80%;
+  max-height: 220px;
+  max-width: 80%;
+  overflow-wrap: break-word;
   border: 5px dashed violet;
   border-radius: 20px;
-  margin: auto;
+  margin: 10px auto;
   font-size: x-large;
   padding: 0px 20px 0px 30px;
 }

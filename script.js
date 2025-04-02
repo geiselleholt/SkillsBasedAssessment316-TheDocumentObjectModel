@@ -147,7 +147,7 @@ function createStory(title, story) {
 
   let storySection = document.getElementById(`storySection`);
   let storyDiv = document.createElement(`div`);
-  storyDiv.classList.add(`storyStyle`);
+  storyDiv.classList.add(`storyDivStyle`);
   storySection.appendChild(storyDiv);
   storyDiv.appendChild(fragment);
 
