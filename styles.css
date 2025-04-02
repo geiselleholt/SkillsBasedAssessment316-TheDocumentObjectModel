@@ -53,14 +53,12 @@
 .storyDivStyle {
   background-color: cyan;
   color: blue;
-  max-height: 220px;
-  max-width: 80%;
-  overflow-wrap: break-word;
+  width: auto;
+  height: auto;
   border: 5px dashed violet;
   border-radius: 20px;
   margin: 10px auto;
-  font-size: x-large;
-  padding: 0px 20px 0px 30px;
+  padding: 5px;
 }
 
 body {

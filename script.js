@@ -189,6 +189,6 @@ function handleNewStory(e) {
 
 //Commit frequently to the git repository ✅
 
-// Include a README file that contains a description of your application
+// Include a README file that contains a description of your application ✅
 
-// Level of effort displayed in creativity, presentation, and user experience
+// Level of effort displayed in creativity, presentation, and user experience ✅
