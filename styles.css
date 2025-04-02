@@ -69,9 +69,9 @@ body {
   font-size: large;
   background-color: violet;
   border-radius: 20px;
-  height: 50px;
-  width: 60%;
-  margin: auto;
+  height: auto;
+  width: auto;
+  margin: 10px auto;
   box-shadow: none;
   visibility: hidden;
   display: flex;
@@ -82,8 +82,8 @@ body {
 
 #replayButton,
 #newStoryButton {
-  width: 200px;
-  height: 30px;
+  width: auto;
+  height: auto;
   font-size: medium;
   background-color: blue;
   color: cyan;
