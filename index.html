@@ -8,27 +8,19 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <main></main>
-
-    <template id="storyTemplate" class="storyStyle">
-      <div id="templateDiv">
-        <h3 id="templateTitle"></h3>
-        <p id="templateStory"></p>
+    <div>
+      <main></main>
+      <template id="storyTemplate" class="storyStyle">
+        <div id="templateDiv">
+          <h3 id="templateTitle"></h3>
+          <p id="templateStory"></p>
+        </div>
+      </template>
+      <section id="storySection"></section>
+      <div id="actionButtons">
+        <button id="replayButton">Play this story again?</button>
+        <button id="newStoryButton">Try another funny story?</button>
       </div>
-    </template>
-    <div id="storyDiv"></div>
-
-    <div id="radioDiv">
-      <ul style="list-style-type: none">
-        <li>
-          <input type="radio" id="replay" name="choice" />
-          <label for="replay">Play this story again?</label>
-        </li>
-        <li>
-          <input type="radio" id="next" name="choice" />
-          <label for="next">Try another funny story?</label>
-        </li>
-      </ul>
     </div>
   </body>
 </html>

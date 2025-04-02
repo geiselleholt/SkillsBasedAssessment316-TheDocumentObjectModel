@@ -43,7 +43,7 @@ var inputs = [
 let main = document.querySelector(`main`);
 // Cache at least one element using querySelector or querySelectorAll ✅
 main.style.backgroundColor = `var(--main-bg)`;
-main.innerHTML = `<h1>🤖 Mad Lib from a Tech Newb 👩‍💻</h1>`;
+main.innerHTML = `<h1>🤖 Mad Libs from a Tech Newb 👩‍💻</h1>`;
 main.classList.add(`mainStyle`);
 
 let instructions = document.createElement(`h2`);
@@ -55,7 +55,7 @@ main.appendChild(instructions);
 let inputForm = document.createElement(`form`);
 main.appendChild(inputForm);
 inputForm.classList.add(`inputForm`);
-// Include at least one form and/or input with HTML attribute validation (type=number or type=date)
+// Include at least one form and/or input with HTML attribute validation ✅
 
 inputs.forEach((input) => {
   let inputEl = document.createElement(`input`);
@@ -90,6 +90,7 @@ function handleInputForm(e) {
   let language = document.getElementById(`language`).value;
   let occupation = document.getElementById(`occupation`).value;
 
+  // Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.) ✅
   if (
     pet == `` ||
     action == `` ||
@@ -103,13 +104,30 @@ function handleInputForm(e) {
     alert(`You missed an entry or 2... 😜`);
     // Use at least two Browser Object Model (BOM) properties or methods - #1 ✅
   } else {
-    let firstStory = `On the unforgettable day of ${date}🌞, a ${occupation} decided to ${action} for the first time 🤩. It took them ${number} hours😮‍💨, but they finally succeeded🥳! They celebrated by ordering ${number} bowls of ${food}😋. Then, they accidentally spilled ${food} on their ${pet}🤭, causing it to start speaking in ${language}🙀. It was the most ${adjective} day of their lives🤪!`;
+    let storySection = document.getElementById("storySection");
 
-    let firstTitle = `Funny story...`;
+    if (!storySection.firstChild) {
+      // Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.) ✅
+      let firstStory = `On the unforgettable day of ${date}🌞, a ${occupation} decided to ${action} for the first time 🤩. It took them ${number} hours😮‍💨, but they finally succeeded🥳! They celebrated by ordering ${number} bowls of ${food}😋. Then, they accidentally spilled ${food} on their ${pet}🤭, causing it to start speaking in ${language}🙀. It was the most ${adjective} day of their lives🤪!`;
 
-    createStory(firstTitle, firstStory);
+      let firstTitle = `Funny story...`;
+
+      createStory(firstTitle, firstStory);
+    } else {
+      let newStory = `One fine day on ${date}, a ${adjective} ${pet} wandered into the forest. It decided to ${action} near a group of ${occupation}s who were having a picnic. After ${number} minutes, the ${pet} joined them and started eating ${food}. To everyone's surprise, the ${pet} began speaking in ${language}, telling jokes and making everyone laugh. It was the most ${adjective} day in the forest, and the ${pet} became the forest's favorite comedian!`;
+
+      let newTitle = `Forest funday...`;
+
+      createStory(newTitle, newStory);
+      actionButtons.style.visibility = "hidden";
+
+      setTimeout(alert("That was fun Play Again!"), 100);
+    }
+
+    inputEls.forEach((inputEl) => {
+      inputEl.value = "";
+    });
   }
-  // Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.) ✅
 }
 
 function createStory(title, story) {
@@ -122,26 +140,48 @@ function createStory(title, story) {
   let clone = template.content.cloneNode(true);
 
   clone.getElementById(`templateTitle`).textContent = title;
-  clone.getElementById(`templateStory`).innerHTML = `<h3>${story}</h3>`;
+  clone.getElementById(`templateStory`).innerHTML = `<h4>${story}</h4>`;
   // Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent ✅
 
   fragment.appendChild(clone);
 
-  let storyDiv = document.getElementById(`storyDiv`);
-  storyDiv.appendChild(fragment);
+  let storySection = document.getElementById("storySection");
+  let storyDiv = document.createElement(`div`);
   storyDiv.classList.add(`storyStyle`);
+  storySection.appendChild(storyDiv);
+  storyDiv.appendChild(fragment);
 
-  let radioDiv = document.getElementById("radioDiv");
-  radioDiv.style.visibility = "visible";
+  let actionButtons = document.getElementById("actionButtons");
+  actionButtons.style.visibility = "visible";
   // Modify at least one attribute of an element in response to user interaction ✅
   // Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties ✅
 }
 
+let replay = document.getElementById("replayButton");
+replay.classList.add(`button`);
+replay.addEventListener("click", handleReplay);
+// Register at least two different event listeners and create the associated event handler functions - #2 ✅
 
+function handleReplay(e) {
+  e.preventDefault();
+  window.location.reload();
+  // Use at least two Browser Object Model (BOM) properties or methods - #2 ✅
+}
 
-// let secondStory = `One fine day on ${date}, a ${adjective} ${pet} wandered into the forest. It decided to ${action} near a group of ${occupation}s who were having a picnic. After ${number} minutes, the ${pet} joined them and started eating ${food}. To everyone's surprise, the ${pet} began speaking in ${language}, telling jokes and making everyone laugh. It was the most ${adjective} day in the forest, and the ${pet} became the forest's favorite comedian!`;
+let newStory = document.getElementById("newStoryButton");
+newStory.classList.add(`button`);
+newStory.addEventListener("click", handleNewStory);
 
-// let secondTitle = `Forest funday...`;
+function handleNewStory(e) {
+  e.preventDefault();
+
+  let inputEls = document.querySelectorAll("input");
+  inputEls.forEach((inputEl) => {
+    inputEl.value = "";
+  });
+
+  alert("Enter new words and numbers for a funny forest story 🤩");
+}
 
 // ADDITIONAL REQUIREMENTS ------------
 
@@ -152,9 +192,3 @@ function createStory(title, story) {
 // Include a README file that contains a description of your application
 
 // Level of effort displayed in creativity, presentation, and user experience
-
-// Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.)
-
-// Register at least two different event listeners and create the associated event handler functions - #2
-
-// Use at least two Browser Object Model (BOM) properties or methods - #2   USE  window.location.reload()
