@@ -123,7 +123,7 @@ function handleInputForm(e) {
       actionButtons.style.visibility = `hidden`;
 
       setTimeout(() => {
-        alert(`Thanks for playing! 🎉`);
+        alert(`🎉 Thanks for playing! 🎉`);
         window.location.reload();
       }, 10000);
     }
@@ -140,7 +140,7 @@ function createStory(title, story) {
   let clone = template.content.cloneNode(true);
 
   clone.getElementById(`templateTitle`).textContent = title;
-  clone.getElementById(`templateStory`).innerHTML = `<h5>${story}</h5>`;
+  clone.getElementById(`templateStory`).innerHTML = `<h3>${story}</h3>`;
   // Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent ✅
 
   fragment.appendChild(clone);
@@ -180,7 +180,7 @@ function handleNewStory(e) {
     inputEl.value = ``;
   });
 
-  alert(`Enter new words and numbers for a funny forest story 🤩`);
+  alert(`🐻 Enter new words and numbers for a funny forest story 🌲🦫`);
 }
 
 // ADDITIONAL REQUIREMENTS ------------

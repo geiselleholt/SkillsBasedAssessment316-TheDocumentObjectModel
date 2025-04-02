@@ -10,6 +10,8 @@
   border-radius: 35px;
   padding: 10px;
   margin-bottom: 20px;
+  height: auto;
+  width: auto;
 }
 
 .inputForm {
