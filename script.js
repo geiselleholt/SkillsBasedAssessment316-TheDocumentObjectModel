@@ -1,8 +1,8 @@
 var inputs = [
   {
-    id: `pet`,
+    id: `animal`,
     type: `text`,
-    placeholder: `Pet`,
+    placeholder: `Animal`,
   },
   {
     id: `action`,
@@ -81,7 +81,7 @@ inputForm.addEventListener(`submit`, handleInputForm);
 
 function handleInputForm(e) {
   e.preventDefault();
-  let pet = document.getElementById(`pet`).value;
+  let animal = document.getElementById(`animal`).value;
   let action = document.getElementById(`action`).value;
   let adjective = document.getElementById(`adjective`).value;
   let date = document.getElementById(`date`).value;
@@ -92,7 +92,7 @@ function handleInputForm(e) {
 
   // Include at least one form and/or input with DOM event-based validation. (This can be the same form or input as the one above, but should include event-based validation in addition to the HTML attribute validation.) ✅
   if (
-    pet == `` ||
+    animal == `` ||
     action == `` ||
     adjective == `` ||
     date == `` ||
@@ -108,13 +108,13 @@ function handleInputForm(e) {
 
     if (!storySection.firstChild) {
       // Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.) ✅
-      let firstStory = `On the unforgettable day of ${date}🌞, a ${occupation} decided to ${action} for the first time 🤩. It took them ${number} hours😮‍💨, but they finally succeeded🥳! They celebrated by ordering ${number} bowls of ${food}😋. Then, they accidentally spilled ${food} on their ${pet}🤭, causing it to start speaking in ${language}🙀. It was the most ${adjective} day of their lives🤪!`;
+      let firstStory = `On the unforgettable day of ${date}🌞, a ${occupation} decided to ${action} for the first time 🤩. It took them ${number} hours😮‍💨, but they finally succeeded🥳! They celebrated by ordering ${number} bowls of ${food}😋. Then, they accidentally spilled ${food} on their ${animal}🤭, causing it to start speaking in ${language}🙀. It was the most ${adjective} day of their lives🤪!`;
 
       let firstTitle = `Funny story...`;
 
       createStory(firstTitle, firstStory);
     } else {
-      let newStory = `One cloudy day on ${date} ⛅, a ${adjective} ${pet} wandered into the forest🌲. It decided to ${action} near a group of ${occupation}s who were having a picnic🧺. After ${number} minutes, the ${pet} joined them and started eating their ${food}🥣. To everyone's surprise, the ${pet} began speaking in ${language}, telling jokes and making everyone laugh🤣😂. It was the most ${adjective} day in the forest🌄, and the ${pet} became the forest's favorite comedian!🤡`;
+      let newStory = `One cloudy day on ${date} ⛅, a ${adjective} ${animal} wandered into the forest🌲. It decided to ${action} near a group of ${occupation}s who were having a picnic🧺. After ${number} minutes, the ${animal} joined them and started eating their ${food}🥣. To everyone's surprise, the ${animal} began speaking in ${language}, telling jokes and making everyone laugh🤣😂. It was the most ${adjective} day in the forest🌄, and the ${animal} became the forest's favorite comedian!🤡`;
 
       let newTitle = `Forest funday...`;
 
