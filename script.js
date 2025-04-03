@@ -1,4 +1,4 @@
-var inputs = [
+const inputs = [
   {
     id: `animal`,
     type: `text`,
@@ -27,6 +27,7 @@ var inputs = [
   {
     id: `date`,
     type: `date`,
+    placeholder: `date`,
   },
   {
     id: `occupation`,
@@ -48,7 +49,7 @@ main.classList.add(`mainStyle`);
 
 let instructions = document.createElement(`h3`);
 // Create at least one element using createElement ✅
-instructions.textContent = `Don't think!🚫🤔 Just enter in the first word or number that comes to mind and see a funny story 🤪`;
+instructions.textContent = `Don't think!🚫🤔 Just enter in the first word or number that comes to mind and see a 😹 Silly Story 🤪`;
 main.appendChild(instructions);
 // Use appendChild and/or prepend to add new elements to the DOM ✅
 
@@ -76,6 +77,9 @@ inputEls.forEach((inputEl) => {
   // Iterate over a collection of elements to accomplish some task ✅
 });
 
+let firstButtons = document.getElementById(`firstButtons`);
+let secondButtons = document.getElementById(`secondButtons`);
+
 inputForm.addEventListener(`submit`, handleInputForm);
 // Register at least two different event listeners and create the associated event handler functions - #1 ✅
 
@@ -101,31 +105,29 @@ function handleInputForm(e) {
     language == `` ||
     occupation == ``
   ) {
-    alert(`You missed an entry or 2... 😜`);
+    alert(`🤭 You missed an entry or 2... 😜`);
     // Use at least two Browser Object Model (BOM) properties or methods - #1 ✅
   } else {
     let storySection = document.getElementById(`storySection`);
 
     if (!storySection.firstChild) {
       // Use the parent-child-sibling relationship to navigate between elements at least once (firstChild, lastChild, parentNode, nextElementSibling, etc.) ✅
-      let firstStory = `On the unforgettable day of ${date}🌞, a ${occupation} decided to ${action} for the first time 🤩. It took them ${number} hours😮‍💨, but they finally succeeded🥳! They celebrated by ordering ${number} bowls of ${food}😋. Then, they accidentally spilled ${food} on their ${animal}🤭, causing it to start speaking in ${language}🙀. It was the most ${adjective} day of their lives🤪!`;
+      let firstTitle = `See a Silly Story...`;
 
-      let firstTitle = `Funny story...`;
+      let firstStory = `On the unforgettable day of ${date}🌞, a ${adjective} ${occupation} decided to ${action} for the first time 🤩. It took them ${number} hours😮‍💨, but they finally succeeded🥳! They celebrated by ordering ${number} bowls of ${food}😋. Then, they accidentally spilled ${food} on their ${animal}🤭, causing it to start speaking in ${language}🙀. It was the most ${adjective} day of their lives🤪!`;
 
       createStory(firstTitle, firstStory);
-    } else {
-      let newStory = `One cloudy day on ${date} ⛅, a ${adjective} ${animal} wandered into the forest🌲. It decided to ${action} near a group of ${occupation}s who were having a picnic🧺. After ${number} minutes, the ${animal} joined them and started eating their ${food}🥣. To everyone's surprise, the ${animal} began speaking in ${language}, telling jokes and making everyone laugh🤣😂. It was the most ${adjective} day in the forest🌄, and the ${animal} became the forest's favorite comedian!🤡`;
 
-      let newTitle = `Forest funday...`;
+      firstButtons.style.visibility = `visible`;
+    } else {
+      let newTitle = `In the Funny Forest...`;
+
+      let newStory = `One cloudy day on ${date} ⛅, a ${adjective} ${animal} wandered into the forest🌲. It decided to ${action} near a group of ${occupation}s who were having a picnic🧺. After ${number} minutes, the ${animal} joined them and started eating their ${food}🥣. To everyone's surprise, the ${animal} began speaking in ${language}, telling jokes and making everyone laugh🤣😂. It was the most ${adjective} day in the forest🌄, and the ${animal} became the forest's favorite comedian!🤡`;
 
       createStory(newTitle, newStory);
 
-      actionButtons.style.visibility = `hidden`;
-
-      setTimeout(() => {
-        alert(`🎉 Thanks for playing! 🎉`);
-        window.location.reload();
-      }, 10000);
+      firstButtons.style.visibility = `hidden`;
+      secondButtons.style.visibility = `visible`;
     }
   }
 }
@@ -151,18 +153,16 @@ function createStory(title, story) {
   storySection.appendChild(storyDiv);
   storyDiv.appendChild(fragment);
 
-  let actionButtons = document.getElementById(`actionButtons`);
-  actionButtons.style.visibility = `visible`;
   // Modify at least one attribute of an element in response to user interaction ✅
   // Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties ✅
 }
 
-let replay = document.getElementById(`replayButton`);
-replay.classList.add(`button`);
-replay.addEventListener(`click`, handleReplay);
+let silly = document.getElementById(`sillyButton`);
+silly.classList.add(`button`);
+silly.addEventListener(`click`, handleSilly);
 // Register at least two different event listeners and create the associated event handler functions - #2 ✅
 
-function handleReplay(e) {
+function handleSilly(e) {
   e.preventDefault();
   window.location.reload();
   // Use at least two Browser Object Model (BOM) properties or methods - #2 ✅
@@ -180,7 +180,31 @@ function handleNewStory(e) {
     inputEl.value = ``;
   });
 
-  alert(`🐻 Enter new words and numbers for a funny forest story 🌲🦫`);
+  alert(`🦋🦌 Enter new words and numbers for a Funny Forest story 🫎🌻`);
+}
+
+let startOver = document.getElementById(`startOverButton`);
+startOver.classList.add(`button`);
+startOver.addEventListener(`click`, handleStartOver);
+
+function handleStartOver(e) {
+  e.preventDefault();
+  window.location.reload();
+}
+
+let funny = document.getElementById(`funnyButton`);
+funny.classList.add(`button`);
+funny.addEventListener(`click`, handleFunny);
+
+function handleFunny(e) {
+  e.preventDefault();
+
+  let inputEls = document.querySelectorAll(`input`);
+  inputEls.forEach((inputEl) => {
+    inputEl.value = ``;
+  });
+
+  alert(`🐻🌳 Enter new words and numbers for another Funny Forest story 🐦🦫`);
 }
 
 // ADDITIONAL REQUIREMENTS ------------

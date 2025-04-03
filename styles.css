@@ -40,8 +40,8 @@
 }
 
 .button {
-  width: 100px;
-  height: 40px;
+  width: auto;
+  height: auto;
   font-size: large;
   background-color: blue;
   color: cyan;
@@ -69,7 +69,8 @@ body {
   background-color: black;
 }
 
-#actionButtons {
+#firstButtons,
+#secondButtons {
   font-size: large;
   background-color: violet;
   border-radius: 20px;
@@ -84,12 +85,3 @@ body {
   border: 5px dashed blue;
 }
 
-#replayButton,
-#newStoryButton {
-  width: auto;
-  height: auto;
-  font-size: medium;
-  background-color: blue;
-  color: cyan;
-  box-shadow: 5px 5px 5px rgb(237, 237, 169);
-}
