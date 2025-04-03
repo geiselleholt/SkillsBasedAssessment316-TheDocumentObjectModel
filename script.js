@@ -49,7 +49,7 @@ main.classList.add(`mainStyle`);
 
 let instructions = document.createElement(`h3`);
 // Create at least one element using createElement ✅
-instructions.textContent = `Don't think!🚫🤔 Just enter in the first word or number that comes to mind and see a 😹 Silly Story 🤪`;
+instructions.textContent = `Don't think!🚫🤔 Just enter in the first word or number that comes to mind and see a Silly Story 🤪`;
 main.appendChild(instructions);
 // Use appendChild and/or prepend to add new elements to the DOM ✅
 
